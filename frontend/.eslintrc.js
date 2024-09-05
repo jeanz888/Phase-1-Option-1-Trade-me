@@ -1,23 +1,22 @@
-module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "standard",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+import React from 'react';
+
+const Header = ({ user }) => {
+  return (
+    <header>
+      <h1>My App</h1>
+      {user ? (
+        <>
+          <span>{user.username}</span>
+          <button>Logout</button>
+        </>
+      ) : (
+        <>
+          <button>Login</button>
+          <button>Register</button>
+        </>
+      )}
+    </header>
+  );
 };
+
+export default Header;
